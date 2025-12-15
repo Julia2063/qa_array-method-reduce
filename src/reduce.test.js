@@ -76,4 +76,11 @@ describe('reduce', () => {
 
     expect(f.mock.calls[0]).toEqual([0, 1, 0, items]);
   });
+
+  it(`should throw TypeError 
+    if input array is empty and there isn't an accumulator`, () => {
+    const f = jest.fn();
+
+    expect(() => [].reduce2(f)).toThrow(TypeError);
+  });
 });
